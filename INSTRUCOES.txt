@@ -1,0 +1,11 @@
+LifeOS com Supabase — instalação segura
+
+1. Guarda o backup JSON original. NÃO apagues a app antiga do telemóvel.
+2. Supabase → SQL Editor → New query → cola o conteúdo de supabase-setup.sql → Run.
+3. Supabase → Authentication → Users → Add user → cria o teu utilizador com email e palavra-passe (confirma o email se solicitado).
+4. Publica esta pasta no GitHub/Vercel como uma nova versão. Mantém o projeto antigo intacto até testares.
+5. Abre a nova LifeOS no PC e inicia sessão. Na área ⚙ Dados → Importar JSON, seleciona o backup lifeos-backup-2026-11-18 (1).json.
+6. Aguarda aparecer ☁ Sincronizado. Abre a mesma versão no telemóvel e inicia sessão com o mesmo email. Confirma as 3 metas, 2 movimentos, 1 cliente e saldo de 800 €.
+7. Testa uma pequena alteração num dispositivo e verifica no outro após alguns segundos. Só depois considera trocar o domínio da versão antiga.
+
+IMPORTANTE: esta versão precisa de internet para sincronizar. Alterações simultâneas em dispositivos diferentes geram um aviso de conflito, para evitar substituições silenciosas. Não importes backups antigos depois de começares a utilizar a sincronização. A cópia local é apenas de segurança e não substitui o servidor.
