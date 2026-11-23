@@ -1,0 +1,42 @@
+/* Subtle motion, with a reduced-motion alternative. */
+:root{--ease-out:cubic-bezier(.22,1,.36,1)}
+.btn,.nav,.sidebar-toggle{transition:background-color .18s ease,border-color .18s ease,box-shadow .2s ease,transform .2s var(--ease-out)}
+.btn:active,.sidebar-toggle:active{transform:scale(.97)}
+.btn:disabled{cursor:wait;opacity:.65}
+.card,.section,.client-card{transition:border-color .2s ease,box-shadow .25s ease}
+.field{transition:border-color .18s ease,box-shadow .18s ease}
+.field:focus{border-color:var(--accent);box-shadow:0 0 0 3px #8b9cff18}
+.page-enter{animation:page-enter .34s var(--ease-out) both}
+.page-enter .cards>.card{animation:card-enter .4s var(--ease-out) both}
+.page-enter .cards>.card:nth-child(2){animation-delay:35ms}
+.page-enter .cards>.card:nth-child(3){animation-delay:70ms}
+.page-enter .cards>.card:nth-child(4){animation-delay:105ms}
+.modal-back{backdrop-filter:blur(6px);animation:backdrop-enter .18s ease both}
+.modal-back .modal{animation:modal-enter .26s var(--ease-out) both;box-shadow:0 24px 80px #0005}
+.bar>span{transition:width .5s var(--ease-out)}
+.sidebar-toggle{display:none}
+@media(hover:hover){.btn:hover{transform:translateY(-1px);box-shadow:0 5px 15px #0003}.btn.primary:hover{box-shadow:0 5px 20px #8b9cff30}.card:hover,.client-card:hover{border-color:#46567a;box-shadow:0 7px 24px #0002}.nav:hover{background:#202c48}}
+@media(min-width:651px){
+.sidebar{width:244px;padding-top:26px;transition:width .32s var(--ease-out),padding .32s var(--ease-out);z-index:11}
+.brand{margin-left:10px;margin-bottom:65px;white-space:nowrap;gap:12px;overflow:hidden}
+.logo{flex-shrink:0}
+.brand-name,.nav-label{transition:opacity .16s ease,max-width .32s var(--ease-out);max-width:180px;white-space:nowrap;overflow:hidden}
+.sidebar-toggle{display:grid;place-items:center;position:absolute;right:17px;top:79px;width:36px;height:32px;border:1px solid var(--border);border-radius:9px;background:#161f30;color:var(--muted)}
+.sidebar-toggle:hover{color:var(--text);border-color:var(--accent)}
+.sidebar-toggle svg{transition:transform .32s var(--ease-out)}
+.nav{min-height:46px;overflow:hidden;gap:12px}
+.nav-icon{width:20px;flex:0 0 20px;text-align:center;font-size:18px}
+.sidebar-foot{white-space:nowrap;transition:opacity .15s ease}
+.sidebar-collapsed .sidebar{width:80px;padding-left:10px;padding-right:10px}
+.sidebar-collapsed .brand{margin-left:13px;gap:0}
+.sidebar-collapsed .brand-name,.sidebar-collapsed .nav-label{opacity:0;max-width:0}
+.sidebar-collapsed .nav{gap:0;padding-left:20px;padding-right:20px}
+.sidebar-collapsed .sidebar-foot{opacity:0;pointer-events:none;visibility:hidden}
+.sidebar-collapsed .sidebar-toggle{right:22px}
+.sidebar-collapsed .sidebar-toggle svg{transform:rotate(180deg)}
+}
+@keyframes page-enter{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes card-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes backdrop-enter{from{opacity:0}to{opacity:1}}
+@keyframes modal-enter{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.btn:hover,.btn:active,.sidebar-toggle:active{transform:none}}
